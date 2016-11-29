@@ -1,15 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Role:</strong>
-  <%= @shift.role_id %>
+  <h1>Hi
+    <%= (Associate.find_by employee_id: @shift.employee_id).first_name %> <%= (Associate.find_by employee_id: @shift.employee_id).last_name %>!
+  </h1>
 </p>
 
 <p>
-  <strong>Associate:</strong>
-  <%= (Associate.find_by employee_id: @shift.employee_id).first_name %> <%= (Associate.find_by employee_id: @shift.employee_id).last_name %>
---  <%= @shift.employee_id %>
+  <h1>Today you will be a
+    <%= Role.find(@shift.role_id).name %>
+  </h1>
 </p>
 
-<%= link_to 'Edit', edit_shift_path(@shift) %> |
-<%= link_to 'Back', shifts_path %>
+
+<%= simple_form_for(@shift2) do |f| %>
+  <% if @shift2.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shift2.errors.count, "error") %> prohibited this shift from being saved:</h2>
+
+      <ul>
+      <% @shift2.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :employee_id, label: 'Scan your badge', :autofocus => true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
