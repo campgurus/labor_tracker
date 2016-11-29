@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -12,25 +13,26 @@
   </h1>
 </p>
 
+<div class="container center_div">
+  <%= simple_form_for(@shift2) do |f| %>
+    <% if @shift2.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(shift2.errors.count, "error") %> prohibited this shift from being saved:</h2>
 
-<%= simple_form_for(@shift2) do |f| %>
-  <% if @shift2.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(shift2.errors.count, "error") %> prohibited this shift from being saved:</h2>
+        <ul>
+        <% @shift2.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-      <% @shift2.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="field">
+      <%= f.input :employee_id, label: 'Scan your badge', :autofocus => true %>
     </div>
+
+    <!-- <div class="actions">
+      <%= f.submit %>
+    </div> -->
   <% end %>
-
-  <div class="field">
-    <%= f.input :employee_id, label: 'Scan your badge', :autofocus => true %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
