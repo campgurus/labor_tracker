@@ -61,3 +61,5 @@ gem 'simple_form'
 gem 'rails_admin', '~> 1.0'
 
 gem 'devise'
+
+gem "select2-rails"

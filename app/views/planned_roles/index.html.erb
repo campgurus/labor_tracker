@@ -14,11 +14,9 @@
   <tbody>
     <% @planned_roles.each do |planned_role| %>
       <tr>
-        <td><%= planned_role.associate_id %></td>
-        <td><%= planned_role.role_id %></td>
-        <td><%= link_to 'Show', planned_role %></td>
+        <td><%= Associate.find(planned_role.associate_id).full_name %></td>
+        <td><%= Role.find(planned_role.role_id).name %></td>
         <td><%= link_to 'Edit', edit_planned_role_path(planned_role) %></td>
-        <td><%= link_to 'Destroy', planned_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
