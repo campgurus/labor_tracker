@@ -1,0 +1,2 @@
+class PlannedRole < ApplicationRecord
+end

@@ -1,0 +1,1 @@
+json.partial! "planned_roles/planned_role", planned_role: @planned_role

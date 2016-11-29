@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Associate:</strong>
+  <%= @planned_role.associate_id %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @planned_role.role_id %>
+</p>
+
+<%= link_to 'Edit', edit_planned_role_path(@planned_role) %> |
+<%= link_to 'Back', planned_roles_path %>

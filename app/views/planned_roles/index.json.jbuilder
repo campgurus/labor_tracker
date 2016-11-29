@@ -1,0 +1,1 @@
+json.array! @planned_roles, partial: 'planned_roles/planned_role', as: :planned_role

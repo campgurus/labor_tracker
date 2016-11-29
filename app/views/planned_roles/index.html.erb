@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Planned Roles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Associate</th>
+      <th>Role</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planned_roles.each do |planned_role| %>
+      <tr>
+        <td><%= planned_role.associate_id %></td>
+        <td><%= planned_role.role_id %></td>
+        <td><%= link_to 'Show', planned_role %></td>
+        <td><%= link_to 'Edit', edit_planned_role_path(planned_role) %></td>
+        <td><%= link_to 'Destroy', planned_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Planned Role', new_planned_role_path %>
