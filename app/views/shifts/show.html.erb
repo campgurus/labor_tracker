@@ -7,7 +7,8 @@
 
 <p>
   <strong>Associate:</strong>
-  <%= @shift.associate_id %>
+  <%= (Associate.find_by employee_id: @shift.employee_id).first_name %> <%= (Associate.find_by employee_id: @shift.employee_id).last_name %>
+--  <%= @shift.employee_id %>
 </p>
 
 <%= link_to 'Edit', edit_shift_path(@shift) %> |

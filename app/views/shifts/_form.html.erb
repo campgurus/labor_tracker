@@ -1,4 +1,4 @@
-<%= form_for(shift) do |f| %>
+<%= simple_form_for(shift) do |f| %>
   <% if shift.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(shift.errors.count, "error") %> prohibited this shift from being saved:</h2>
@@ -12,13 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :role_id %>
-    <%= f.number_field :role_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :associate_id %>
-    <%= f.number_field :associate_id %>
+    <%= f.input :employee_id, label: 'Scan your badge' %>
   </div>
 
   <div class="actions">
