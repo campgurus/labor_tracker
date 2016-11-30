@@ -4,7 +4,7 @@ class ShiftsController < ApplicationController
   # GET /shifts
   # GET /shifts.json
   def index
-    @shifts = Shift.all
+    @shifts = Shift.where(created_at: 5.hours.ago..Time.current)
   end
 
   # GET /shifts/1
