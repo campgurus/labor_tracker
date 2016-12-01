@@ -4,7 +4,7 @@ class ShiftsController < ApplicationController
   # GET /shifts
   # GET /shifts.json
   def index
-    @shifts = Shift.where(created_at: 5.hours.ago..Time.current)
+    @shifts = Shift.where(created_at: 5.hours.ago..Time.current).where.not('role_id' => nil)
   end
 
   # GET /shifts/1
