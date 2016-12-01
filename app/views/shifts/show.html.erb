@@ -1,5 +1,5 @@
 
-<%= link_to "Show all assignments", shifts, class: "btn btn-primary" %>
+<%= link_to "Show all assignments", shifts_path, class: "btn btn-primary" %>
 <%= link_to "Create Shift Plan", new_shift_plan_path, class: "btn btn-primary" %>
 <p>
   <% if PlannedRole.exists?(employee_id: @shift.employee_id) %>
