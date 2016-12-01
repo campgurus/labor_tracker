@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :shift_plans
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :planned_roles
   resources :roles

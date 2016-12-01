@@ -4,7 +4,11 @@ class ShiftsController < ApplicationController
   # GET /shifts
   # GET /shifts.json
   def index
-    @shifts = Shift.where(created_at: 5.hours.ago..Time.current).where.not('role_id' => nil)
+    employee_ids = []
+    ShiftPlan.last.planned_roles.each do |plan|
+      employee_ids << plan.employee_id
+    end
+    @shifts = Shift.where(created_at: 5.hours.ago..Time.current).where.not('role_id' => nil).where("employee_id IN (?)", employee_ids)
   end
 
   # GET /shifts/1

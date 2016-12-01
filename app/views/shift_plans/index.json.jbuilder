@@ -1,0 +1,1 @@
+json.array! @shift_plans, partial: 'shift_plans/shift_plan', as: :shift_plan

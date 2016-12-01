@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129120555) do
+ActiveRecord::Schema.define(version: 20161201202142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,10 @@ ActiveRecord::Schema.define(version: 20161129120555) do
   create_table "planned_roles", force: :cascade do |t|
     t.integer  "associate_id"
     t.integer  "role_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "employee_id"
+    t.integer  "shift_plan_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -39,12 +40,19 @@ ActiveRecord::Schema.define(version: 20161129120555) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "shift_plans", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "shifts", force: :cascade do |t|
     t.integer  "role_id"
     t.integer  "associate_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "employee_id"
+    t.integer  "shift_plan_id"
   end
 
 end

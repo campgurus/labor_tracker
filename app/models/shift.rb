@@ -1,5 +1,6 @@
 class Shift < ApplicationRecord
   after_create :set_role_from_plan
+  belongs_to :shift_plan
 
 
 private

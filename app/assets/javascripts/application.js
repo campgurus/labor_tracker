@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap
 //= require select2
+//= require cocoon
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
