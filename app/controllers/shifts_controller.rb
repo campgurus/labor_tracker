@@ -10,6 +10,7 @@ class ShiftsController < ApplicationController
   # GET /shifts/1
   # GET /shifts/1.json
   def show
+    @shift = Shift.find(params[:id])
     @shift2 = Shift.new
   end
 
