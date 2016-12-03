@@ -1,5 +1,5 @@
 <div class='nested-fields'>
-    <%= f.input :role_id %>
-    <%= f.input :employee_id %>
-    <%= link_to_remove_association "remove assignment", f %>
+  <%= f.input_field :role_id, collection: Role.all, label_method: :name,:value_method => :id  %>
+  <%= f.input_field :employee_id, collection: Associate.all, label_method: :full_name,:value_method => :employee_id  %>
+  <%= link_to_remove_association "remove assignment", f %>
 </div>
