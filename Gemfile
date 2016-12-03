@@ -65,3 +65,5 @@ gem 'devise'
 gem "select2-rails"
 
 gem 'cocoon'
+
+gem 'rails_12factor'
