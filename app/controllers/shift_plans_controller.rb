@@ -10,6 +10,8 @@ class ShiftPlansController < ApplicationController
   # GET /shift_plans/1
   # GET /shift_plans/1.json
   def show
+    @shift_plan = ShiftPlan.find(params[:id])
+    @planned_roles = @shift_plan.planned_roles
   end
 
   # GET /shift_plans/new

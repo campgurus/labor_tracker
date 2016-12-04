@@ -1,9 +1,216 @@
-<p id="notice"><%= notice %></p>
+<h1>Planned Roles</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @shift_plan.name %>
-</p>
+<% if @planned_roles %>
+<div class="row">
+<!-- Recently Updated cases -->
+  <div class="col-sm-6">
+    <div class="chart-wrapper">
+      <div class="chart-title background-gray">
+        Packers
+      </div>
+      <div class="chart-stage">
+       <table class='table leader-list'>
+         <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Badge No.</th>
+         </tr>
+
+         <% @planned_roles.where(role_id: 1).order(updated_at: :desc).each_with_index do |role, i| %>
+           <tr>
+             <td><%= i + 1 %></td>
+             <td><%= link_to truncate((Associate.find_by employee_id: role.employee_id).full_name, length: 14), '#' %></td>
+             <td><%= role.employee_id %></td>
+           </tr>
+         <% end %>
+       </table>
+      </div>
+      <div class="chart-notes">
+        These are the planned packers
+      </div>
+    </div>
+  </div>
+
+<!-- Most Followed cases -->
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            SLAM Operators - code: PSSO or PMSO
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% @planned_roles.where(role_id: 2).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate((Associate.find_by employee_id: role.employee_id).full_name, length: 14), '#' %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These are the assigned SLAM Operators
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            SLAM Spiders - code: FCPRJ
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% @planned_roles.where(role_id: 3).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate((Associate.find_by employee_id: role.employee_id).full_name, length: 14), '#' %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These are the assigned SLAM Spiders
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            Water Spiders - code: SNGWS
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% @planned_roles.where(role_id: 4).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate((Associate.find_by employee_id: role.employee_id).full_name, length: 14), '#' %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These are the assigned Water Spiders
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            Problem Solvers - code: PSPPS
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% @planned_roles.where(role_id: 5).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate((Associate.find_by employee_id: role.employee_id).full_name, length: 14), '#' %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These are the assigned Problem Solvers
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            Totes - code: TOTREP
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% @planned_roles.where(role_id: 6).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate((Associate.find_by employee_id: role.employee_id).full_name, length: 14), '#' %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These AAs are doing Tote Replenishment
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            Process Guides - code: PSPPG
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% @planned_roles.where(role_id: 7).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate((Associate.find_by employee_id: role.employee_id).full_name, length: 14), '#' %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These are the assigned Process Guides
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <%= link_to 'Edit', edit_shift_plan_path(@shift_plan) %> |
 <%= link_to 'Back', shift_plans_path %>
+<% else %>
+<h1>This shit plan needs assignments to be added</h1>
+<% end %>

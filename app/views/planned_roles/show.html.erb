@@ -1,14 +1,214 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Associate:</strong>
-  <%= @planned_role.associate_id %>
-</p>
+<div class="row">
+<!-- Recently Updated cases -->
+  <div class="col-sm-6">
+    <div class="chart-wrapper">
+      <div class="chart-title background-gray">
+        Packers
+      </div>
+      <div class="chart-stage">
+       <table class='table leader-list'>
+         <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Badge No.</th>
+         </tr>
 
-<p>
-  <strong>Role:</strong>
-  <%= @planned_role.role_id %>
-</p>
+         <% PlannedRole.where(role_id: 1).order(updated_at: :desc).each_with_index do |role, i| %>
+           <tr>
+             <td><%= i + 1 %></td>
+             <td><%= link_to truncate(Associate.find_by employee_id: role.employee_id).full_name, length: 14), associate %></td>
+             <td><%= role.employee_id %></td>
+           </tr>
+         <% end %>
+       </table>
+      </div>
+      <div class="chart-notes">
+        These are the planned packers
+      </div>
+    </div>
+  </div>
+
+<!-- Most Followed cases -->
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            SLAM Operators - code: PSSO or PMSO
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% PlannedRole.where(role_id: 2).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate(Associate.find_by employee_id: role.employee_id).full_name, length: 14), associate %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These are the assigned SLAM Operators
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            SLAM Operators - code: PSSO or PMSO
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% PlannedRole.where(role_id: 2).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate(Associate.find_by employee_id: role.employee_id).full_name, length: 14), associate %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These are the assigned SLAM Operators
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            SLAM Operators - code: PSSO or PMSO
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% PlannedRole.where(role_id: 2).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate(Associate.find_by employee_id: role.employee_id).full_name, length: 14), associate %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These are the assigned SLAM Operators
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            SLAM Operators - code: PSSO or PMSO
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% PlannedRole.where(role_id: 2).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate(Associate.find_by employee_id: role.employee_id).full_name, length: 14), associate %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These are the assigned SLAM Operators
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            SLAM Operators - code: PSSO or PMSO
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% PlannedRole.where(role_id: 2).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate(Associate.find_by employee_id: role.employee_id).full_name, length: 14), associate %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These are the assigned SLAM Operators
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title background-orange">
+            SLAM Operators - code: PSSO or PMSO
+          </div>
+          <div class="chart-stage">
+           <table class='table leader-list'>
+             <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Badge No.</th>
+             </tr>
+
+             <% PlannedRole.where(role_id: 2).order(updated_at: :desc).each_with_index do |role, i| %>
+               <tr>
+                 <td><%= i + 1 %></td>
+                 <td><%= link_to truncate(Associate.find_by employee_id: role.employee_id).full_name, length: 14), associate %></td>
+                 <td><%= role.employee_id %></td>
+               </tr>
+             <% end %>
+           </table>
+          </div>
+          <div class="chart-notes">
+            These are the assigned SLAM Operators
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
 <%= link_to 'Edit', edit_planned_role_path(@planned_role) %> |
 <%= link_to 'Back', planned_roles_path %>
