@@ -44,7 +44,7 @@ class ShiftPlansController < ApplicationController
   def update
     respond_to do |format|
       if @shift_plan.update(shift_plan_params)
-        format.html { redirect_to @shift_plan, notice: 'Shift plan was successfully updated.' }
+        format.html { redirect_to planned_roles_path, notice: 'Shift plan was successfully updated.' }
         format.json { render :show, status: :ok, location: @shift_plan }
       else
         format.html { render :edit }

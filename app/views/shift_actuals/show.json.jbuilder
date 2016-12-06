@@ -1,0 +1,1 @@
+json.partial! "shift_actuals/shift_actual", shift_actual: @shift_actual

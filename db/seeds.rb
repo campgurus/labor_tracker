@@ -71,13 +71,13 @@ if PlannedRole.count == 0
   puts "Creating Some Plans..."
   planned_roles =
   [
-    {associate_id: 1, role_id: 2, employee_id: Associate.find(1).employee_id },
-    {associate_id: 2, role_id: 7, employee_id: Associate.find(2).employee_id },
-    {associate_id: 3, role_id: 5, employee_id: Associate.find(3).employee_id },
-    {associate_id: 4, role_id: 3, employee_id: Associate.find(4).employee_id },
-    {associate_id: 5, role_id: 1, employee_id: Associate.find(5).employee_id },
-    {associate_id: 6, role_id: 6, employee_id: Associate.find(6).employee_id },
-    {associate_id: 7, role_id: 4, employee_id: Associate.find(7).employee_id }
+    {associate_id: 1, role_id: 8, employee_id: Associate.find(1).employee_id, location_id: 1},
+    {associate_id: 2, role_id: 9, employee_id: Associate.find(2).employee_id, location_id: 1 },
+    {associate_id: 3, role_id: 10, employee_id: Associate.find(3).employee_id, location_id: 1 },
+    {associate_id: 4, role_id: 11, employee_id: Associate.find(4).employee_id, location_id: 1 },
+    {associate_id: 5, role_id: 12, employee_id: Associate.find(5).employee_id, location_id: 1 },
+    {associate_id: 6, role_id: 13, employee_id: Associate.find(6).employee_id, location_id: 1 },
+    {associate_id: 7, role_id: 14, employee_id: Associate.find(7).employee_id, location_id: 1 }
   ]
 
   planned_roles.each do |plan|

@@ -4,7 +4,8 @@ class PlannedRolesController < ApplicationController
   # GET /planned_roles
   # GET /planned_roles.json
   def index
-    @planned_roles = PlannedRole.all
+    @shift_plan = ShiftPlan.last
+    @planned_roles = @shift_plan.planned_roles
   end
 
   # GET /planned_roles/1

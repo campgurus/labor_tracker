@@ -1,5 +1,5 @@
 
-<%= link_to "Show all assignments", shifts_path, class: "btn btn-primary" %>
+<%= link_to "Show all assignments", shift_actual_path(ShiftActual.last), class: "btn btn-primary" %>
 <%= link_to "Create Shift Plan", new_shift_plan_path, class: "btn btn-primary" %>
 <p>
   <% if PlannedRole.exists?(employee_id: @shift.employee_id) %>
@@ -7,11 +7,14 @@
       <%= (Associate.find_by employee_id: @shift.employee_id).first_name %> <%= (Associate.find_by employee_id: @shift.employee_id).last_name %>!
     </h1>
 
-    <p>
-      <h1>Today you will be a
-        <%= Role.find(@shift.role_id).name %>
+    <h1>Today's Role:
+      <%= Role.find(@shift.role_id).name %>
+    </h1>
+    <% if @shift.location_id.present? %>
+      <h1>Location:
+          <%= Location.find(@shift.location_id).name %>
       </h1>
-    </p>
+    <% end %>
   <% else %>
     <h1>
       You have not been assigned a role yet.  Please speak to your manager.

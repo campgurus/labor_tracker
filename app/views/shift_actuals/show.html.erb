@@ -1,15 +1,15 @@
 <h1>
-  Planned Roles
+  Roles for Checked In Associates
   <%= link_to "Change the Plan", edit_shift_plan_path(@shift_plan), class: "btn btn-success" %>
 </h1>
 
-<% if @planned_roles %>
+<% if @shifts %>
 <div class="row">
 <!-- Recently Updated cases -->
 <% Role.all.each do |role| %>
   <div class="col-sm-6">
     <div class="chart-wrapper">
-      <div class="chart-title background-gray">
+      <div class="chart-title background-orange">
         <%= role.name %>
       </div>
       <div class="chart-stage">
@@ -21,7 +21,7 @@
           <th>Badge No.</th>
          </tr>
 
-         <% @planned_roles.where(role_id: role.id).order(updated_at: :desc).each_with_index do |assignment, i| %>
+         <% @shifts.where(role_id: role.id).order(updated_at: :desc).each_with_index do |assignment, i| %>
            <tr>
              <td><%= i + 1 %></td>
              <td><%= link_to truncate((Associate.find_by employee_id: assignment.employee_id).full_name, length: 14), '#' %></td>
@@ -46,5 +46,5 @@
 <%= link_to 'Change the Plan', edit_shift_plan_path(@shift_plan) %> |
 <%= link_to 'Back', shift_plans_path %>
 <% else %>
-<h1>This shit plan needs assignments to be added</h1>
+<h1>This shift plan needs assignments to be added</h1>
 <% end %>

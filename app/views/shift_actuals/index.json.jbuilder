@@ -1,0 +1,1 @@
+json.array! @shift_actuals, partial: 'shift_actuals/shift_actual', as: :shift_actual
