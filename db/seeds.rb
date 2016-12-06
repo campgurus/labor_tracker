@@ -12,11 +12,14 @@ if Role.count == 0
   [
     {name: "Packer"},
     {name: "SLAM Operator"},
+    {name: "Manual SLAM"},
     {name: "SLAM Water Spider"},
     {name: "Water Spider"},
+    {name: "ShortStop"},
     {name: "Problem Solver"},
     {name: "Tote Replenishment"},
-    {name: "Process Guide"}
+    {name: "Process Guide"},
+    {name: "Process Assistant"}
   ]
 
   roles.each do |role|
@@ -79,5 +82,27 @@ if PlannedRole.count == 0
 
   planned_roles.each do |plan|
     PlannedRole.create(plan)
+  end
+end
+
+if Location.count == 0
+  puts "Creating Some Locations..."
+  locations =
+  [
+    {name: "Line 1" },
+    {name: "Line 2" },
+    {name: "Line 3" },
+    {name: "Line 4" },
+    {name: "Gift Wrap Line" },
+    {name: "VRet" },
+    {name: "Marketplace" },
+    {name: "SLAM 1/2" },
+    {name: "SLAM 3/4" },
+    {name: "SLAM 5/6" },
+    {name: "SLAM 7/8" }
+  ]
+
+  locations.each do |location|
+    Location.create(location)
   end
 end

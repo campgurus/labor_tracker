@@ -71,6 +71,6 @@ class ShiftPlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shift_plan_params
-      params.require(:shift_plan).permit(:name, planned_roles_attributes: [:id, :role_id, :associate_id, :employee_id, :_destroy])
+      params.require(:shift_plan).permit(:name, planned_roles_attributes: [:id, :role_id, :associate_id, :employee_id, :location_id, :_destroy])
     end
 end

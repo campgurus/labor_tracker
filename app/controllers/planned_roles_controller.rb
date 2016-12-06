@@ -69,6 +69,6 @@ class PlannedRolesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def planned_role_params
-      params.require(:planned_role).permit(:associate_id, :role_id)
+      params.require(:planned_role).permit(:associate_id, :role_id, :location_id)
     end
 end
