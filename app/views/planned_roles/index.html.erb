@@ -1,13 +1,52 @@
 <h1>
-  Planned Roles
-  <%= link_to "Change the Plan", edit_shift_plan_path(@shift_plan), class: "btn btn-success" %>
+  Current Shift Plan
 </h1>
+<p>
+  <%= link_to "Change the Plan", edit_shift_plan_path(@shift_plan), class: "btn btn-success" %>
+  <%= link_to "Associates Here Today", shift_actual_path(ShiftActual.last), class: "btn btn-warning" %>
+  <%= link_to "Admin", rails_admin.dashboard_path, class: "btn btn-secondary" %>
+  <%= link_to "Back to Home Page", root_path, class: "btn btn-secondary" %>
+</p>
 
 <% if @planned_roles %>
 <div class="row">
-<!-- Recently Updated cases -->
-<% Role.all.each do |role| %>
   <div class="col-sm-6">
+    <div class="chart-wrapper">
+      <div class="chart-title background-gray">
+        Packers
+      </div>
+      <div class="chart-stage">
+       <table class='table leader-list'>
+         <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Badge No.</th>
+         </tr>
+
+         <% @planned_roles.where(role_id: 8).order(updated_at: :desc).each_with_index do |assignment, i| %>
+           <tr>
+             <td><%= i + 1 %></td>
+             <td><%= link_to truncate((Associate.find_by employee_id: assignment.employee_id).full_name, length: 14), '#' %></td>
+             <td>
+               <% if assignment.location_id? %>
+                 <%= Location.find(assignment.location_id).name %>
+               <% end %>
+             </td>
+             <td><%= assignment.employee_id %></td>
+           </tr>
+         <% end %>
+       </table>
+      </div>
+      <div class="chart-notes">
+        These are the planned Packers
+      </div>
+    </div>
+  </div>
+<div class="col-sm-6">
+<!-- Recently Updated cases -->
+<% Role.where(id: [9..21]).each do |role| %>
+  <div class="col-sm-12">
     <div class="chart-wrapper">
       <div class="chart-title background-gray">
         <%= role.name %>
@@ -41,6 +80,7 @@
     </div>
   </div>
 <% end %>
+</div>
 <!--  -->
 
 <%= link_to 'Change the Plan', edit_shift_plan_path(@shift_plan) %> |

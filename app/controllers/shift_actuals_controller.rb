@@ -1,5 +1,6 @@
 class ShiftActualsController < ApplicationController
   before_action :set_shift_actual, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: ENV["BASIC_USER"], password: ENV["BASIC_PASSWORD"], except: :show
 
   # GET /shift_actuals
   # GET /shift_actuals.json

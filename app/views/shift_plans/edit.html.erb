@@ -1,6 +1,6 @@
+<%= link_to "Show all assignments", shift_actual_path(ShiftActual.last), class: "btn btn-warning" %>
+<%= link_to "View the Plan", planned_roles_path, class: "btn btn-primary" %>
+<%= link_to "Admin", rails_admin.dashboard_path, class: "btn btn-secondary" %>
 <h1>Editing Shift Plan</h1>
 
 <%= render 'form', shift_plan: @shift_plan %>
-
-<%= link_to 'Show', @shift_plan %> |
-<%= link_to 'Back', shift_plans_path %>

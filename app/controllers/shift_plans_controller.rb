@@ -1,5 +1,6 @@
 class ShiftPlansController < ApplicationController
   before_action :set_shift_plan, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: ENV["BASIC_USER"], password: ENV["BASIC_PASSWORD"], except: :show
 
   # GET /shift_plans
   # GET /shift_plans.json

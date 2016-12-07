@@ -1,7 +1,8 @@
 
 <%= link_to "Show all assignments", shift_actual_path(ShiftActual.last), class: "btn btn-primary" %>
-<%= link_to "Create Shift Plan", new_shift_plan_path, class: "btn btn-primary" %>
-<p>
+<%= link_to "View the Plan", planned_roles_path, class: "btn btn-primary" %>
+<%= link_to "Admin", rails_admin.dashboard_path, class: "btn btn-secondary" %>
+<p class="center">
   <% if PlannedRole.exists?(employee_id: @shift.employee_id) %>
     <h1>Hi
       <%= (Associate.find_by employee_id: @shift.employee_id).first_name %> <%= (Associate.find_by employee_id: @shift.employee_id).last_name %>!
@@ -16,13 +17,17 @@
       </h1>
     <% end %>
   <% else %>
-    <h1>
+    <h3>
       You have not been assigned a role yet.  Please speak to your manager.
-    </h1>
+    </h3>
   <% end %>
 </p>
+<br>
+<br>
+<br>
 
-<div class="container center_div">
+<div class="container center_div center">
+<h1 class="center">Scan your badge to see your shift assignment</h1>
   <%= simple_form_for(@shift2) do |f| %>
     <% if @shift2.errors.any? %>
       <div id="error_explanation">

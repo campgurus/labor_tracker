@@ -1,16 +1,13 @@
 <%= simple_form_for(@shift_plan) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-  </div>
-  <h3>Assignments</h3>
+  <h3>Current Assignments:</h3>
   <div id='planned_roles'>
     <%= f.simple_fields_for :planned_roles do |planned_role| %>
       <%= render 'planned_role_fields', :f => planned_role %>
     <% end %>
     <div class='planned_roles'>
-      <%= link_to_add_association 'add assignment', f, :planned_roles %>
+      <%= link_to_add_association 'add a new assignment', f, :planned_roles, class: "btn btn-default"%>
     </div>
   </div>
 

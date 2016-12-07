@@ -1,7 +1,10 @@
 <%= link_to "Show all assignments", shift_actual_path(ShiftActual.last), class: "btn btn-warning" %>
-<%= link_to "Create Shift Plan", new_shift_plan_path, class: "btn btn-primary" %>
-<h1 class="text-center">Scan your badge to see your shift assignment</h1>
-<div class="container center_div">
-  <%= render 'form', shift: @shift %>
-</div>
-<%#= link_to 'Back', shifts_path %>
+<%= link_to "View the Plan", planned_roles_path, class: "btn btn-primary" %>
+<%= link_to "Admin", rails_admin.dashboard_path, class: "btn btn-secondary" %>
+<br>
+<br>
+<br>
+  <h1 class="center">Scan your badge to see your shift assignment</h1>
+  <div class="container center_div center">
+    <%= render 'form', shift: @shift %>
+  </div>

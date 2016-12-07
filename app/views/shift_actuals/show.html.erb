@@ -1,7 +1,12 @@
 <h1>
-  Checked-In Associates
-  <%= link_to "Change the Plan", edit_shift_plan_path(@shift_plan), class: "btn btn-success" %>
+  Checked-In Associates -- <%= @shift_actual.date.strftime("%A, %b %d")%>
 </h1>
+<p>
+  <%= link_to "View the Plan", planned_roles_path, class: "btn btn-primary" %>
+  <%= link_to "Change the Plan", edit_shift_plan_path(@shift_plan), class: "btn btn-success" %>
+  <%= link_to "Admin", rails_admin.dashboard_path, class: "btn btn-secondary" %>
+  <%= link_to "Back to Home Page", root_path, class: "btn btn-secondary" %>
+</p>
 
 <div class="row">
   <div class="col-sm-6">
@@ -33,7 +38,7 @@
        </table>
       </div>
       <div class="chart-notes">
-        These are the planned Packers
+        These are the Packers who have checked in
       </div>
     </div>
   </div>
@@ -69,7 +74,7 @@
        </table>
       </div>
       <div class="chart-notes">
-        These are the planned <%= role.name %>s
+        These are the <%= role.name %>s who have checked in
       </div>
     </div>
   </div>
