@@ -1,0 +1,2 @@
+json.extract! plan_size, :id, :packer, :slam_operator, :water_spider, :shortstop, :problem_solver, :tote_replenishment, :process_guide, :process_assistant, :created_at, :updated_at
+json.url plan_size_url(plan_size, format: :json)

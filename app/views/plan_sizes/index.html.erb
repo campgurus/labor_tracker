@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Plan Sizes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Packer</th>
+      <th>Slam operator</th>
+      <th>Water spider</th>
+      <th>Shortstop</th>
+      <th>Problem solver</th>
+      <th>Tote replenishment</th>
+      <th>Process guide</th>
+      <th>Process assistant</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plan_sizes.each do |plan_size| %>
+      <tr>
+        <td><%= plan_size.packer %></td>
+        <td><%= plan_size.slam_operator %></td>
+        <td><%= plan_size.water_spider %></td>
+        <td><%= plan_size.shortstop %></td>
+        <td><%= plan_size.problem_solver %></td>
+        <td><%= plan_size.tote_replenishment %></td>
+        <td><%= plan_size.process_guide %></td>
+        <td><%= plan_size.process_assistant %></td>
+        <td><%= link_to 'Show', plan_size %></td>
+        <td><%= link_to 'Edit', edit_plan_size_path(plan_size) %></td>
+        <td><%= link_to 'Destroy', plan_size, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plan Size', new_plan_size_path %>

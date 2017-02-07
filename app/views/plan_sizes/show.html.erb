@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Packer:</strong>
+  <%= @plan_size.packer %>
+</p>
+
+<p>
+  <strong>Slam operator:</strong>
+  <%= @plan_size.slam_operator %>
+</p>
+
+<p>
+  <strong>Water spider:</strong>
+  <%= @plan_size.water_spider %>
+</p>
+
+<p>
+  <strong>Shortstop:</strong>
+  <%= @plan_size.shortstop %>
+</p>
+
+<p>
+  <strong>Problem solver:</strong>
+  <%= @plan_size.problem_solver %>
+</p>
+
+<p>
+  <strong>Tote replenishment:</strong>
+  <%= @plan_size.tote_replenishment %>
+</p>
+
+<p>
+  <strong>Process guide:</strong>
+  <%= @plan_size.process_guide %>
+</p>
+
+<p>
+  <strong>Process assistant:</strong>
+  <%= @plan_size.process_assistant %>
+</p>
+
+<%= link_to 'Edit', edit_plan_size_path(@plan_size) %> |
+<%= link_to 'Back', plan_sizes_path %>

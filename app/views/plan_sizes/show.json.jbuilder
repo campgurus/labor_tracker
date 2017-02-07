@@ -1,0 +1,1 @@
+json.partial! "plan_sizes/plan_size", plan_size: @plan_size

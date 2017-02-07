@@ -1,0 +1,18 @@
+<%= simple_form_for(@plan_size) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :packer, label: 'Packers' %>
+    <%= f.input :slam_operator, label: 'SLAM Operators' %>
+    <%= f.input :water_spider, label: 'Water Spiders' %>
+    <%= f.input :shortstop, label: 'Shortstops' %>
+    <%= f.input :problem_solver, label: 'Problem Solvers' %>
+    <%= f.input :tote_replenishment, label: 'Tote Replenishers' %>
+    <%= f.input :process_guide, label: 'Process Guides' %>
+    <%= f.input :process_assistant, label: 'Process Assistants' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Submit Quantities' %>
+  </div>
+<% end %>

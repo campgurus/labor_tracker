@@ -1,0 +1,1 @@
+json.array! @plan_sizes, partial: 'plan_sizes/plan_size', as: :plan_size
